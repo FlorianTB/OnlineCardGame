@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "CardInfo.h"
 #include "CardGameMode.generated.h"
 
 /**
@@ -17,9 +18,18 @@ class ONLINECARDGAME_API ACardGameMode : public AGameModeBase
 public:
 	ACardGameMode();
 
+	UPROPERTY(EditDefaultsOnly, Category = "Data")
+	UDataTable* CardDataTable;
+
 	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
 	int32 InitialHandSize;
 
 	UFUNCTION(BlueprintCallable, Category = "Game")
-	void StartGame();	
+	void StartGame();
+
+	UFUNCTION(BlueprintCallable, Category = "Game")
+	void AddCard();
+
+private:
+	FCardInfo GetRandomCardInfo();
 };

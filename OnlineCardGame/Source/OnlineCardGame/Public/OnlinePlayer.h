@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "Card.h"
+#include "CardHandWidget.h"
 #include "Components/WidgetComponent.h"
 #include "Camera/CameraComponent.h"
 #include "OnlinePlayer.generated.h"
@@ -17,24 +18,18 @@ class ONLINECARDGAME_API AOnlinePlayer : public APawn
 public:
 	AOnlinePlayer();
 
+	virtual void BeginPlay() override;
+	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TArray<UCard*> Hand;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Card UI")
-	TSubclassOf<UUserWidget> CardWidgetClass;
-
-	UPROPERTY(VisibleAnywhere, Category = "Card UI")
-	TArray<UWidgetComponent*> CardWidgets;
+	
+public:
+	UFUNCTION(BlueprintCallable, Category = "Card Game")
+	UCardHandWidget* GetCardHand() const;
 
 	UFUNCTION(BlueprintCallable)
 	void AddCardToHand(UCard* Card);
 
 	UFUNCTION(BlueprintCallable)
 	void PlayCard(UCard* Card);
-
-	UFUNCTION(BlueprintCallable)
-	void DisplayHand();
-
-private:
-	void UpdateCardWidgets();
 };

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CardInfo.h"
 #include "UObject/NoExportTypes.h"
 #include "Card.generated.h"
 
@@ -16,11 +17,5 @@ class ONLINECARDGAME_API UCard : public UObject
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString CardName;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UTexture2D* CardImage;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int Damage;
+	FCardInfo CardInfo;
 };
