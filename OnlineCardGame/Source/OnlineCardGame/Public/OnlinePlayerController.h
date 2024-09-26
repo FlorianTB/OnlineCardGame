@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "CardHandWidgetHUD.h"
+#include "OnlinePlayer.h"
 #include "GameFramework/PlayerController.h"
 #include "OnlinePlayerController.generated.h"
 
@@ -30,7 +31,9 @@ public:
 	UFUNCTION(Server, Reliable, WithValidation)
 	void ServerNotifyHUDCreated();
 
-	// Fonction pour obtenir le UCardHand
 	UFUNCTION(BlueprintCallable, Category = "Card Game")
 	UCardHandWidget* GetCardHand() const;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Player")
+	AOnlinePlayer* OnlinePlayer;
 };

@@ -6,8 +6,7 @@
 #include "GameFramework/Pawn.h"
 #include "Card.h"
 #include "CardHandWidget.h"
-#include "Components/WidgetComponent.h"
-#include "Camera/CameraComponent.h"
+#include "CardWidget.h"
 #include "OnlinePlayer.generated.h"
 
 UCLASS()
@@ -23,7 +22,6 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TArray<UCard*> Hand;
 	
-public:
 	UFUNCTION(BlueprintCallable, Category = "Card Game")
 	UCardHandWidget* GetCardHand() const;
 
@@ -31,5 +29,5 @@ public:
 	void AddCardToHand(UCard* Card);
 
 	UFUNCTION(BlueprintCallable)
-	void PlayCard(UCard* Card);
+	void PlayCard(UCardWidget* CardWidget);
 };

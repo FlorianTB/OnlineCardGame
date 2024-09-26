@@ -21,6 +21,11 @@ AOnlinePlayer::AOnlinePlayer()
 void AOnlinePlayer::BeginPlay()
 {
 	Super::BeginPlay();
+
+	AOnlinePlayerController* OPC = Cast<AOnlinePlayerController>(GetController());
+
+	if(OPC)
+		OPC->OnlinePlayer = this;
 }
 
 void AOnlinePlayer::AddCardToHand(UCard* Card)
@@ -34,15 +39,36 @@ void AOnlinePlayer::AddCardToHand(UCard* Card)
 	GetCardHand()->AddCard(Card->CardInfo);
 }
 
-void AOnlinePlayer::PlayCard(UCard* Card)
+void AOnlinePlayer::PlayCard(UCardWidget* CardWidget)
 {
-	Hand.Remove(Card);
-	// Logique supplémentaire pour jouer la carte
+	UE_LOG(LogTemp, Warning, TEXT("Card : %d"), CardWidget->CardInfo.Damage);
+	
+	for (UCard* Card : Hand)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Card %d / Card %d"), Card->CardInfo.Damage, CardWidget->CardInfo.Damage);
+		
+		if(Card->CardInfo.Damage == CardWidget->CardInfo.Damage)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Play card %s"), *CardWidget->CardInfo.CardName);
+			Hand.Remove(Card);
+			UCardHandWidget* CardHand = GetCardHand();
+			if (CardHand)
+			{
+				CardHand->PlayCard(CardWidget);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Error, TEXT("CardHand is null in AOnlinePlayer::PlayCard"));
+			}
+			return;
+		}
+	}
 }
 
 UCardHandWidget* AOnlinePlayer::GetCardHand() const
 {
 	AOnlinePlayerController* OPC = Cast<AOnlinePlayerController>(GetController());
+	
 	if (!OPC)
 	{
 		UE_LOG(LogTemp, Error, TEXT("Invalid PlayerController"));

@@ -7,6 +7,7 @@ UCardHandWidget::UCardHandWidget(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
 	OnCardAdded.Clear();
+	OnCardPlayed.Clear();
 }
 
 void UCardHandWidget::AddCard(FCardInfo NewCard)
@@ -28,5 +29,20 @@ void UCardHandWidget::AddCard(FCardInfo NewCard)
 	else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("OnCardAdded is not bound to any functions"));
+	}
+}
+
+void UCardHandWidget::PlayCard(UCardWidget* PlayedCard)
+{
+	UE_LOG(LogTemp, Warning, TEXT("CardHandWidget::PlayCard called with %s"), *PlayedCard->GetName());
+
+	if (OnCardPlayed.IsBound())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("OnCardPlayed is bound, broadcasting"));
+		OnCardPlayed.Broadcast(PlayedCard);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("OnCardPlayed is not bound"));
 	}
 }
