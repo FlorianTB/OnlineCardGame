@@ -30,4 +30,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void PlayCard(UCardWidget* CardWidget);
+
+	UFUNCTION(BlueprintCallable)
+	void MergeCards(TArray<UCardWidget*> MergedCards);
 };

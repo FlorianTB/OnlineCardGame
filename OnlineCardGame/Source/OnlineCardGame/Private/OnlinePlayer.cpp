@@ -65,6 +65,37 @@ void AOnlinePlayer::PlayCard(UCardWidget* CardWidget)
 	}
 }
 
+void AOnlinePlayer::MergeCards(TArray<UCardWidget*> MergedCards)
+{
+	UE_LOG(LogTemp, Warning, TEXT("[OnlinePlayer] MergeCards"));
+
+	UCard* NewCard = NewObject<UCard>();
+	NewCard->CardInfo.CardName = "MergedCard";
+	NewCard->CardInfo.BackgroundColor = FColor::Black;
+	
+	for (UCardWidget* MergedCard : MergedCards)
+	{
+		NewCard->CardInfo.Damage += MergedCard->CardInfo.Damage;
+
+		for (UCard* c : Hand)
+		{
+			if(c->CardInfo.Damage == MergedCard->CardInfo.Damage)
+			{
+				Hand.Remove(c);
+				break;
+			}
+		}
+	}
+
+	Hand.Add(NewCard);
+
+	UCardHandWidget* CardHand = GetCardHand();
+	if (CardHand)
+	{
+		CardHand->MergeCards(MergedCards[0], MergedCards[1], NewCard->CardInfo);
+	}
+}
+
 UCardHandWidget* AOnlinePlayer::GetCardHand() const
 {
 	AOnlinePlayerController* OPC = Cast<AOnlinePlayerController>(GetController());

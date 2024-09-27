@@ -22,9 +22,7 @@ void UCardHandWidget::AddCard(FCardInfo NewCard)
 	
 	if (OnCardAdded.IsBound())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("About to broadcast OnCardAdded"));
 		OnCardAdded.Broadcast(NewCard);
-		UE_LOG(LogTemp, Warning, TEXT("OnCardAdded broadcasted"));
 	}
 	else
 	{
@@ -38,11 +36,26 @@ void UCardHandWidget::PlayCard(UCardWidget* PlayedCard)
 
 	if (OnCardPlayed.IsBound())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("OnCardPlayed is bound, broadcasting"));
 		OnCardPlayed.Broadcast(PlayedCard);
 	}
 	else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("OnCardPlayed is not bound"));
 	}
+}
+
+void UCardHandWidget::MergeCards(UCardWidget* FirstMergedCard, UCardWidget* SecondMergedCard, FCardInfo NewCard)
+{
+	UE_LOG(LogTemp, Warning, TEXT("MergedCards"));
+
+	if (OnCardsMerged.IsBound())
+	{
+		OnCardsMerged.Broadcast(FirstMergedCard, SecondMergedCard);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("OnCardsMerged is not bound"));
+	}
+
+	AddCard(NewCard);
 }
