@@ -13,15 +13,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a2c5633b-7ae4-4026-b630-6fd9843dc264" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineCardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineCardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Card/W_Card.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Card/W_Card.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Levels/Main.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Main.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Player/W_CardHand.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Player/W_CardHand.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/StarterContent/Architecture/Floor_400x400.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Architecture/Floor_400x400.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineCardGame.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineCardGame.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/CardHandWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/CardHandWidget.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/OnlinePlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/OnlinePlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardHandWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardHandWidget.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/OnlinePlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/OnlinePlayer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +29,8 @@
     <setting file="file://$PROJECT_DIR$/Source/OnlineCardGame/Private/CardGameMode.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/OnlineCardGame/Private/OnlinePlayer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/OnlineCardGame/Public/CardGameMode.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/OnlineCardGame/Public/Grid.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/OnlineCardGame/Public/OnlinePlayer.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Core/Public/Containers/Array.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Core/Public/Containers/UnrealString.h.inl" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -50,19 +43,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C++ Project.OnlineCardGame.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;card&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C++ Project.OnlineCardGame.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "grid",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C++ Project.OnlineCardGame">
     <configuration name="OnlineCardGame" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -515,6 +508,7 @@
       <workItem from="1727352695561" duration="10214000" />
       <workItem from="1727423838141" duration="4078000" />
       <workItem from="1727446654776" duration="752000" />
+      <workItem from="1728030605119" duration="4842000" />
     </task>
     <servers />
   </component>
