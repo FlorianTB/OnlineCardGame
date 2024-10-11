@@ -22,5 +22,5 @@ public:
 	FLinearColor BackgroundColor;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int Damage;
+	FString Type;
 };

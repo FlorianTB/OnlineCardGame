@@ -3,6 +3,7 @@
 
 #include "OnlinePlayer.h"
 
+#include "CardGameMode.h"
 #include "CardHandWidget.h"
 #include "CardWidget.h"
 #include "OnlinePlayerController.h"
@@ -39,61 +40,30 @@ void AOnlinePlayer::AddCardToHand(UCard* Card)
 	GetCardHand()->AddCard(Card->CardInfo);
 }
 
-void AOnlinePlayer::PlayCard(UCardWidget* CardWidget)
+void AOnlinePlayer::PlayCards()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Card : %d"), CardWidget->CardInfo.Damage);
-	
-	for (UCard* Card : Hand)
+	for (UCardWidget* CardWidget : GetCardHand()->SelectedCards)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Card %d / Card %d"), Card->CardInfo.Damage, CardWidget->CardInfo.Damage);
+		for (UCard* Card : Hand)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Card %s / Card %s"), *Card->CardInfo.Type, *CardWidget->CardInfo.Type);
 		
-		if(Card->CardInfo.Damage == CardWidget->CardInfo.Damage)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Play card %s"), *CardWidget->CardInfo.CardName);
-			Hand.Remove(Card);
-			UCardHandWidget* CardHand = GetCardHand();
-			if (CardHand)
+			if(Card->CardInfo.Type == CardWidget->CardInfo.Type)
 			{
-				CardHand->PlayCard(CardWidget);
-			}
-			else
-			{
-				UE_LOG(LogTemp, Error, TEXT("CardHand is null in AOnlinePlayer::PlayCard"));
-			}
-			return;
-		}
-	}
-}
+				UE_LOG(LogTemp, Warning, TEXT("Play card %s"), *CardWidget->CardInfo.CardName);
+				Hand.Remove(Card);
 
-void AOnlinePlayer::MergeCards(TArray<UCardWidget*> MergedCards)
-{
-	UE_LOG(LogTemp, Warning, TEXT("[OnlinePlayer] MergeCards"));
-
-	UCard* NewCard = NewObject<UCard>();
-	NewCard->CardInfo.CardName = "MergedCard";
-	NewCard->CardInfo.BackgroundColor = FColor::Black;
-	
-	for (UCardWidget* MergedCard : MergedCards)
-	{
-		NewCard->CardInfo.Damage += MergedCard->CardInfo.Damage;
-
-		for (UCard* c : Hand)
-		{
-			if(c->CardInfo.Damage == MergedCard->CardInfo.Damage)
-			{
-				Hand.Remove(c);
+				ACardGameMode* GameMode = Cast<ACardGameMode>(GetWorld()->GetAuthGameMode());
+				if (GameMode)
+				{
+					GameMode->PlaceCardOnBoard(Card);
+				}
 				break;
 			}
 		}
 	}
-
-	Hand.Add(NewCard);
-
-	UCardHandWidget* CardHand = GetCardHand();
-	if (CardHand)
-	{
-		CardHand->MergeCards(MergedCards[0], MergedCards[1], NewCard->CardInfo);
-	}
+		
+	GetCardHand()->PlayCards();
 }
 
 UCardHandWidget* AOnlinePlayer::GetCardHand() const

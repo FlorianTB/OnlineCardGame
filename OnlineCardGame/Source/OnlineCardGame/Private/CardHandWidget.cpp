@@ -7,7 +7,7 @@ UCardHandWidget::UCardHandWidget(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
 	OnCardAdded.Clear();
-	OnCardPlayed.Clear();
+	OnPlayCard.Clear();
 }
 
 void UCardHandWidget::AddCard(FCardInfo NewCard)
@@ -30,32 +30,14 @@ void UCardHandWidget::AddCard(FCardInfo NewCard)
 	}
 }
 
-void UCardHandWidget::PlayCard(UCardWidget* PlayedCard)
+void UCardHandWidget::PlayCards()
 {
-	UE_LOG(LogTemp, Warning, TEXT("CardHandWidget::PlayCard called with %s"), *PlayedCard->GetName());
-
-	if (OnCardPlayed.IsBound())
+	if (OnPlayCard.IsBound())
 	{
-		OnCardPlayed.Broadcast(PlayedCard);
+		OnPlayCard.Broadcast();
 	}
 	else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("OnCardPlayed is not bound"));
 	}
-}
-
-void UCardHandWidget::MergeCards(UCardWidget* FirstMergedCard, UCardWidget* SecondMergedCard, FCardInfo NewCard)
-{
-	UE_LOG(LogTemp, Warning, TEXT("MergedCards"));
-
-	if (OnCardsMerged.IsBound())
-	{
-		OnCardsMerged.Broadcast(FirstMergedCard, SecondMergedCard);
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("OnCardsMerged is not bound"));
-	}
-
-	AddCard(NewCard);
 }

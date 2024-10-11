@@ -30,6 +30,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Game")
 	void AddCard();
 
+	UFUNCTION(BlueprintCallable, Category = "Gameplay")
+	void PlaceCardOnBoard(UCard* Card);
+
 private:
 	FCardInfo GetRandomCardInfo();
 };

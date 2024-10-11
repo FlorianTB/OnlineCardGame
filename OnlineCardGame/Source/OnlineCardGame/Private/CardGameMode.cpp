@@ -49,7 +49,6 @@ void ACardGameMode::AddCard()
     }
 }
 
-
 FCardInfo ACardGameMode::GetRandomCardInfo()
 {
     FCardInfo RandomCard;
@@ -75,4 +74,16 @@ FCardInfo ACardGameMode::GetRandomCardInfo()
     }
 
     return RandomCard;
+}
+
+void ACardGameMode::PlaceCardOnBoard(UCard* Card)
+{
+    /*ACardActor* CardActor = GetWorld()->SpawnActor<ACardActor>(CardActorClass);
+    if (CardActor)
+    {
+        CardActor->SetCardData(Card->CardInfo.CardName, Card->CardInfo.Type);
+        
+        FVector Position = CalculateNextCardPosition();
+        CardActor->SetActorLocation(Position);
+    }*/
 }

@@ -19,9 +19,7 @@ class ONLINECARDGAME_API UCardHandWidget : public UUserWidget
 public:
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCardAddedSignature, const FCardInfo&, NewCard);
 
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCardPlayedSignature, UCardWidget*, PlayedCard);
-
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnCardsMergedSignature, UCardWidget*, FirstMergedCard, UCardWidget*, SecondMergedCard);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCardPlayedSignature);
 	
 	UCardHandWidget(const FObjectInitializer& ObjectInitializer);
 
@@ -29,17 +27,14 @@ public:
 	FOnCardAddedSignature OnCardAdded;
 	
 	UPROPERTY(BlueprintAssignable, Category = "Card")
-	FOnCardPlayedSignature OnCardPlayed;
+	FOnCardPlayedSignature OnPlayCard;
 
-	UPROPERTY(BlueprintAssignable, Category = "Card")
-	FOnCardsMergedSignature OnCardsMerged;
+	UPROPERTY(BlueprintReadWrite, Category = "Card")
+	TArray<UCardWidget*> SelectedCards;
 
 	UFUNCTION(BlueprintCallable, Category = "Card Operations")
 	void AddCard(FCardInfo NewCard);
 
 	UFUNCTION(BlueprintCallable, Category = "Card Operations")
-	void PlayCard(UCardWidget* PlayedCard);
-
-	UFUNCTION(BlueprintCallable, Category = "Card Operations")
-	void MergeCards(UCardWidget* FirstMergedCard, UCardWidget* SecondMergedCard, FCardInfo NewCard);
+	void PlayCards();
 };
