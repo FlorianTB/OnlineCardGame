@@ -2,8 +2,13 @@
 
 
 #include "CardGameMode.h"
+
+#include "Cell.h"
 #include "OnlinePlayer.h"
 #include "Kismet/GameplayStatics.h"
+
+class ACell;
+class ACardActor;
 
 ACardGameMode::ACardGameMode()
 {
@@ -76,14 +81,18 @@ FCardInfo ACardGameMode::GetRandomCardInfo()
     return RandomCard;
 }
 
-void ACardGameMode::PlaceCardOnBoard(UCard* Card)
+void ACardGameMode::PlaceCardOnBoard(ACell* Cell, UCard* Card)
 {
-    /*ACardActor* CardActor = GetWorld()->SpawnActor<ACardActor>(CardActorClass);
+    ACardActor* CardActor = GetWorld()->SpawnActor<ACardActor>(CardActorClass);
     if (CardActor)
     {
-        CardActor->SetCardData(Card->CardInfo.CardName, Card->CardInfo.Type);
+        CardActor->SetCardInfo(Card->CardInfo);
+
+        int CardsOnCellCount = Cell->Cards.Num();
         
-        FVector Position = CalculateNextCardPosition();
+        FVector Position = Cell->GetActorLocation() + FVector::UpVector + (CardsOnCellCount * FVector::UpVector);
         CardActor->SetActorLocation(Position);
-    }*/
+        
+        Cell->Cards.AddUnique(CardActor);
+    }
 }

@@ -13,22 +13,14 @@
   <component name="ChangeListManager">
     <list default="true" id="a2c5633b-7ae4-4026-b630-6fd9843dc264" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineCardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineCardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Card/DT_Cards.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Card/DT_Cards.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Card/W_Card.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Card/W_Card.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameMode/BP_CardGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameMode/BP_CardGameMode.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Grid/BP_Cell.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Grid/BP_Cell.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Grid/BP_Grid.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Grid/BP_Grid.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Levels/Main.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Main.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Player/BP_OnlinePlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Player/BP_OnlinePlayerController.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Player/W_CardHand.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Player/W_CardHand.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Architecture/Floor_400x400.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Architecture/Floor_400x400.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/CardGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/CardGameMode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/CardHandWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/CardHandWidget.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/OnlinePlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/OnlinePlayer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardHandWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardHandWidget.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardInfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardInfo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/Cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/Cell.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/OnlinePlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/OnlinePlayer.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -524,6 +516,7 @@
       <workItem from="1727446654776" duration="752000" />
       <workItem from="1728030605119" duration="4842000" />
       <workItem from="1728635292069" duration="7528000" />
+      <workItem from="1728654954057" duration="3842000" />
     </task>
     <servers />
   </component>

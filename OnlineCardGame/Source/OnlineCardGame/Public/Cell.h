@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CardActor.h"
 #include "GameFramework/Actor.h"
 #include "Cell.generated.h"
 
@@ -20,5 +21,7 @@ public:
 	
 	UPROPERTY(EditAnywhere, Category = "Grid")
 	int32 Y;
-
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cards")
+    TArray<ACardActor*> Cards;
 };

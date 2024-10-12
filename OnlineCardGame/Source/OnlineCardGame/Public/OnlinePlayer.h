@@ -7,6 +7,7 @@
 #include "Card.h"
 #include "CardHandWidget.h"
 #include "CardWidget.h"
+#include "Cell.h"
 #include "OnlinePlayer.generated.h"
 
 UCLASS()
@@ -29,5 +30,5 @@ public:
 	void AddCardToHand(UCard* Card);
 
 	UFUNCTION(BlueprintCallable)
-	void PlayCards();
+	void PlayCards(ACell* Cell);
 };

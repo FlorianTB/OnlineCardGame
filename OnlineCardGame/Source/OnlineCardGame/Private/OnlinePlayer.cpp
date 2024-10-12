@@ -40,7 +40,7 @@ void AOnlinePlayer::AddCardToHand(UCard* Card)
 	GetCardHand()->AddCard(Card->CardInfo);
 }
 
-void AOnlinePlayer::PlayCards()
+void AOnlinePlayer::PlayCards(ACell* Cell)
 {
 	for (UCardWidget* CardWidget : GetCardHand()->SelectedCards)
 	{
@@ -56,7 +56,7 @@ void AOnlinePlayer::PlayCards()
 				ACardGameMode* GameMode = Cast<ACardGameMode>(GetWorld()->GetAuthGameMode());
 				if (GameMode)
 				{
-					GameMode->PlaceCardOnBoard(Card);
+					GameMode->PlaceCardOnBoard(Cell, Card);
 				}
 				break;
 			}

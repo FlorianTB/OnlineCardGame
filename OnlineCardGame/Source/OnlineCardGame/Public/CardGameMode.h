@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CardActor.h"
 #include "GameFramework/GameModeBase.h"
 #include "CardInfo.h"
 #include "CardGameMode.generated.h"
@@ -21,6 +22,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Data")
 	UDataTable* CardDataTable;
 
+UPROPERTY(EditDefaultsOnly, Category = "Card")
+	TSubclassOf<ACardActor> CardActorClass;
+
 	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
 	int32 InitialHandSize;
 
@@ -31,7 +35,7 @@ public:
 	void AddCard();
 
 	UFUNCTION(BlueprintCallable, Category = "Gameplay")
-	void PlaceCardOnBoard(UCard* Card);
+	void PlaceCardOnBoard(ACell* Cell, UCard* Card);
 
 private:
 	FCardInfo GetRandomCardInfo();
