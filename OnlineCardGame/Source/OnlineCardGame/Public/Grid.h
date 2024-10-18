@@ -13,6 +13,11 @@ class ONLINECARDGAME_API AGrid : public AActor
 
 public:
 	AGrid();
+	
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnGridInitializedSignature);
+
+	UPROPERTY(BlueprintAssignable, Category = "Cell")
+    FOnGridInitializedSignature OnGridInitialized;
 
 	UPROPERTY(EditAnywhere, Category = "Grid")
 	int32 Width = 10;
@@ -38,6 +43,15 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Grid")
     UBlueprint* cellBP;
 
-private:
-	TArray<AActor*> GridCells;
+	UPROPERTY(BlueprintReadOnly, Category = "Grid")
+	TArray<ACell*> GridCells;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Cell")
+	TArray<ACell*> SelectedCells;
+	
+	UFUNCTION(BlueprintCallable, Category = "Cell")
+    void SelectCell(ACell* SelectedCell);
+    
+    UFUNCTION(BlueprintCallable, Category = "Cell")
+    void SwapSelecetedCellsCards();
 };

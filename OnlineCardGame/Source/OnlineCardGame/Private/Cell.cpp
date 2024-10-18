@@ -9,5 +9,26 @@ ACell::ACell()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	OnCellSelected.Clear();
+}
+
+void ACell::SelectCell(ACell* Cell)
+{
+    UE_LOG(LogTemp, Warning, TEXT("SelectCell"));
+
+	if (OnCellSelected.IsBound())
+	{
+        UE_LOG(LogTemp, Warning, TEXT("OnCellSelected"));
+		OnCellSelected.Broadcast(Cell);
+	}
+}
+
+void ACell::UpdateCardsPosition()
+{
+	for (ACardActor* Card : Cards)
+	{
+		FVector Position = FVector(GetActorLocation().X, Card->GetActorLocation().Y, GetActorLocation().Z);
+		Card->SetActorLocation(Position);
+	}
 }
 

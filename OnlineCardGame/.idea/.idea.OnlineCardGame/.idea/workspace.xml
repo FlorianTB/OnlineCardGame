@@ -13,15 +13,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a2c5633b-7ae4-4026-b630-6fd9843dc264" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineCardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineCardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/GameMode/BP_CardGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameMode/BP_CardGameMode.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Grid/BP_Cell.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Grid/BP_Cell.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Main.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Main.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Player/W_CardHand.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Player/W_CardHand.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/CardGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/CardGameMode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/OnlinePlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/OnlinePlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardGameMode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Grid/BP_Grid.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Grid/BP_Grid.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Player/BP_OnlinePlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Player/BP_OnlinePlayerController.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/Cell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/Cell.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/Grid.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/Cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/Cell.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/OnlinePlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/OnlinePlayer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/Grid.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/Grid.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +30,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="cidr-memory-view://0" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/OnlineCardGame/Private/CardGameMode.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/OnlineCardGame/Private/OnlinePlayer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/OnlineCardGame/Public/CardGameMode.h" root0="FORCE_HIGHLIGHTING" />
@@ -517,6 +516,8 @@
       <workItem from="1728030605119" duration="4842000" />
       <workItem from="1728635292069" duration="7528000" />
       <workItem from="1728654954057" duration="3842000" />
+      <workItem from="1729247915906" duration="7391000" />
+      <workItem from="1729259108124" duration="368000" />
     </task>
     <servers />
   </component>
@@ -527,5 +528,21 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/OnlineCardGame/Private/Grid.cpp</url>
+          <line>70</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/OnlineCardGame/Private/Cell.cpp</url>
+          <line>16</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

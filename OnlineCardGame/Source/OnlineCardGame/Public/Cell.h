@@ -12,7 +12,9 @@ class ONLINECARDGAME_API ACell : public AActor
 {
 	GENERATED_BODY()
 	
-public:	
+public:
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCellSelectedSignature, ACell*, SelectedCell);
+	
 	// Sets default values for this actor's properties
 	ACell();
 
@@ -24,4 +26,13 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cards")
     TArray<ACardActor*> Cards;
+
+	UPROPERTY(BlueprintAssignable, Category = "Cell")
+	FOnCellSelectedSignature OnCellSelected;
+
+	UFUNCTION(BlueprintCallable, Category = "Cell")
+	void SelectCell(ACell* Cell);
+
+	UFUNCTION(BlueprintCallable, Category = "Cell")
+    void UpdateCardsPosition();
 };

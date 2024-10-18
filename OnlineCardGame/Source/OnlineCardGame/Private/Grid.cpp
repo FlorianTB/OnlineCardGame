@@ -5,10 +5,14 @@
 
 #include "Cell.h"
 
+class UCard;
+
 AGrid::AGrid()
 {
     PrimaryActorTick.bCanEverTick = false;
     RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+
+    OnGridInitialized.Clear();
 }
 
 void AGrid::GenerateGrid()
@@ -40,6 +44,9 @@ void AGrid::GenerateGrid()
     }
 
     this->SetActorLocation(FVector((-Width * CellSize - CellSize) / 2, (-Height * CellSize - CellSize) / 2, 0));
+
+    if (OnGridInitialized.IsBound())
+        OnGridInitialized.Broadcast();
 }
 
 FVector AGrid::GetWorldPositionFromGridPosition(int32 X, int32 Y) const
@@ -58,4 +65,30 @@ bool AGrid::IsValidGridPosition(int32 X, int32 Y) const
 {
     return X >= 0 && X < Width && Y >= 0 && Y < Height;
 }
+
+void AGrid::SelectCell(ACell* SelectedCell)
+{
+    UE_LOG(LogTemp, Warning, TEXT("SelectCell"));
+    
+    SelectedCells.AddUnique(SelectedCell);
+
+    if (SelectedCells.Num() == 2)
+        SwapSelecetedCellsCards();
+}
+
+void AGrid::SwapSelecetedCellsCards()
+{
+    TArray<ACardActor*> FirstCellCards = SelectedCells[0]->Cards;
+    TArray<ACardActor*> SecondsCellCards = SelectedCells[1]->Cards;
+
+    SelectedCells[0]->Cards = FirstCellCards;
+    SelectedCells[0]->UpdateCardsPosition();
+    
+    SelectedCells[1]->Cards = SecondsCellCards;
+    SelectedCells[1]->UpdateCardsPosition();
+
+    SelectedCells.Empty();
+}
+
+
 
