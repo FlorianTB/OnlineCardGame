@@ -4,6 +4,7 @@
 #include "Grid.h"
 
 #include "Cell.h"
+#include "Kismet/GameplayStatics.h"
 
 class UCard;
 
@@ -11,16 +12,20 @@ AGrid::AGrid()
 {
     PrimaryActorTick.bCanEverTick = false;
     RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
-
-    OnGridInitialized.Clear();
 }
 
 void AGrid::GenerateGrid()
 {
-    for (const auto& Cell : GridCells)
+    TArray<AActor*> Cells;
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), ACell::StaticClass(), Cells);
+    for(int i = Cells.Num() - 1; i >= 0; i--)
     {
-        Cell->Destroy();
+        if(Cells[i])
+        {
+            Cells[i]->Destroy();
+        }
     }
+    
     GridCells.Empty();
 
     for (int32 X = 0; X < Width; ++X)
@@ -44,9 +49,6 @@ void AGrid::GenerateGrid()
     }
 
     this->SetActorLocation(FVector((-Width * CellSize - CellSize) / 2, (-Height * CellSize - CellSize) / 2, 0));
-
-    if (OnGridInitialized.IsBound())
-        OnGridInitialized.Broadcast();
 }
 
 FVector AGrid::GetWorldPositionFromGridPosition(int32 X, int32 Y) const
@@ -68,23 +70,36 @@ bool AGrid::IsValidGridPosition(int32 X, int32 Y) const
 
 void AGrid::SelectCell(ACell* SelectedCell)
 {
-    UE_LOG(LogTemp, Warning, TEXT("SelectCell"));
-    
+    if (SelectedCells.Contains(SelectedCell))
+    {
+        SelectedCells.Remove(SelectedCell);
+        return;
+    }
+
     SelectedCells.AddUnique(SelectedCell);
 
     if (SelectedCells.Num() == 2)
-        SwapSelecetedCellsCards();
+        SwapSelectedCellsCards();
 }
 
-void AGrid::SwapSelecetedCellsCards()
+void AGrid::SwapSelectedCellsCards()
 {
     TArray<ACardActor*> FirstCellCards = SelectedCells[0]->Cards;
-    TArray<ACardActor*> SecondsCellCards = SelectedCells[1]->Cards;
+    TArray<ACardActor*> SecondCellCards = SelectedCells[1]->Cards;
 
-    SelectedCells[0]->Cards = FirstCellCards;
+    SelectedCells[0]->Cards.Empty();
+    SelectedCells[1]->Cards.Empty();
+
+    for (ACardActor* Card : FirstCellCards)
+    {
+        SelectedCells[1]->Cards.Add(Card);
+    }
+    for (ACardActor* Card : SecondCellCards)
+    {
+        SelectedCells[0]->Cards.Add(Card);
+    }
+
     SelectedCells[0]->UpdateCardsPosition();
-    
-    SelectedCells[1]->Cards = SecondsCellCards;
     SelectedCells[1]->UpdateCardsPosition();
 
     SelectedCells.Empty();

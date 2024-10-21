@@ -90,9 +90,11 @@ void ACardGameMode::PlaceCardOnBoard(ACell* Cell, UCard* Card)
 
         int CardsOnCellCount = Cell->Cards.Num();
         
+        CardActor->AttachToActor(Cell, FAttachmentTransformRules::KeepRelativeTransform);
+        
         FVector Position = Cell->GetActorLocation() + FVector::UpVector + (CardsOnCellCount * FVector::UpVector);
         CardActor->SetActorLocation(Position);
-        
+
         Cell->Cards.AddUnique(CardActor);
     }
 }

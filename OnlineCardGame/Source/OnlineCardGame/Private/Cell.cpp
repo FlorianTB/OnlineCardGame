@@ -14,12 +14,14 @@ ACell::ACell()
 
 void ACell::SelectCell(ACell* Cell)
 {
-    UE_LOG(LogTemp, Warning, TEXT("SelectCell"));
-
 	if (OnCellSelected.IsBound())
 	{
-        UE_LOG(LogTemp, Warning, TEXT("OnCellSelected"));
+        UE_LOG(LogTemp, Warning, TEXT("OnCellSelected is bound"));
 		OnCellSelected.Broadcast(Cell);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("OnCellSelected not bound"));
 	}
 }
 
@@ -27,7 +29,10 @@ void ACell::UpdateCardsPosition()
 {
 	for (ACardActor* Card : Cards)
 	{
-		FVector Position = FVector(GetActorLocation().X, Card->GetActorLocation().Y, GetActorLocation().Z);
+        Card->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+		Card->AttachToActor(this, FAttachmentTransformRules::KeepRelativeTransform);
+		
+		FVector Position = FVector(this->GetActorLocation().X, this->GetActorLocation().Y, Card->GetActorLocation().Z);
 		Card->SetActorLocation(Position);
 	}
 }
