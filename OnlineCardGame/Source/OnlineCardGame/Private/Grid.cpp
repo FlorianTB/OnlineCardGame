@@ -105,5 +105,25 @@ void AGrid::SwapSelectedCellsCards()
     SelectedCells.Empty();
 }
 
+void AGrid::Fight()
+{
+    /*SelectedCells[0]->Cards.Empty();
+    SelectedCells[1]->Cards.Empty();
+
+    for (ACardActor* Card : FirstCellCards)
+    {
+        SelectedCells[1]->Cards.Add(Card);
+    }
+    for (ACardActor* Card : SecondCellCards)
+    {
+        SelectedCells[0]->Cards.Add(Card);
+    }
+
+    SelectedCells[0]->UpdateCardsPosition();
+    SelectedCells[1]->UpdateCardsPosition();
+
+    SelectedCells.Empty();*/
+}
+
 
 

@@ -46,8 +46,6 @@ void AOnlinePlayer::PlayCards(ACell* Cell)
 	{
 		for (UCard* Card : Hand)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Card %s / Card %s"), *Card->CardInfo.Type, *CardWidget->CardInfo.Type);
-		
 			if(Card->CardInfo.Type == CardWidget->CardInfo.Type)
 			{
 				UE_LOG(LogTemp, Warning, TEXT("Play card %s"), *CardWidget->CardInfo.CardName);

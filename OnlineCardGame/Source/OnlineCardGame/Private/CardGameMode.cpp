@@ -21,6 +21,12 @@ void ACardGameMode::StartGame()
     if (Player)
     {
         UE_LOG(LogTemp, Warning, TEXT("There is a player"));
+
+        FVector Position = FVector(0, 0, 0);
+        FRotator Rotation = FRotator(0, 0, 0);
+
+        Player->SetActorLocation(Position);
+        Player->SetActorRotation(Rotation);
         
         for (int32 i = 0; i < InitialHandSize; ++i)
         {

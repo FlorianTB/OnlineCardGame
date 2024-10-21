@@ -13,14 +13,20 @@
   <component name="ChangeListManager">
     <list default="true" id="a2c5633b-7ae4-4026-b630-6fd9843dc264" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineCardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineCardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Card/BP_CardActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Card/BP_CardActor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Card/CardMaterial.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Card/DT_Cards.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Card/DT_Cards.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameMode/BP_CardGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameMode/BP_CardGameMode.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Grid/BP_Cell.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Grid/BP_Cell.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Grid/BP_Grid.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Grid/BP_Grid.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Main.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Main.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineCardGame.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineCardGame.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Player/BP_OnlinePlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Player/BP_OnlinePlayer.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/CardActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/CardActor.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/CardGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/CardGameMode.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/Cell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/Cell.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/Grid.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Private/OnlinePlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Private/OnlinePlayer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardActor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardInfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/CardInfo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/Cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/Cell.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/OnlineCardGame/Public/Grid.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/OnlineCardGame/Public/Grid.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,19 +151,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "C++ Project.OnlineCardGame.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "grid",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;C++ Project.OnlineCardGame.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;cards&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C++ Project.OnlineCardGame">
     <configuration name="OnlineCardGame" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -616,6 +622,8 @@
       <workItem from="1729247915906" duration="7391000" />
       <workItem from="1729259108124" duration="368000" />
       <workItem from="1729496895670" duration="6352000" />
+      <workItem from="1729513919209" duration="1130000" />
+      <workItem from="1729515251275" duration="7895000" />
     </task>
     <servers />
   </component>
@@ -626,16 +634,5 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/OnlineCardGame/Private/Cell.cpp</url>
-          <line>29</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

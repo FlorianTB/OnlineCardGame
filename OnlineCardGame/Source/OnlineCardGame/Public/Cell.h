@@ -23,16 +23,19 @@ public:
 	
 	UPROPERTY(EditAnywhere, Category = "Grid")
 	int32 Y;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cards")
-    TArray<ACardActor*> Cards;
 
 	UPROPERTY(BlueprintAssignable, Category = "Cell")
 	FOnCellSelectedSignature OnCellSelected;
 
 	UFUNCTION(BlueprintCallable, Category = "Cell")
 	void SelectCell(ACell* Cell);
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cards")
+    TArray<ACardActor*> Cards;
 
-	UFUNCTION(BlueprintCallable, Category = "Cell")
+	UFUNCTION(BlueprintCallable, Category = "Cards")
     void UpdateCardsPosition();
+    
+    UFUNCTION(BlueprintCallable, Category = "Cards")
+    void SetCardsVisible();
 };

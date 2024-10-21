@@ -15,3 +15,15 @@ void ACardActor::SetCardInfo(const FCardInfo& NewCardInfo)
 	CardInfo = NewCardInfo;
 }
 
+void ACardActor::SetIsVisible(bool isVisible)
+{
+	IsVisible = isVisible;
+
+	FRotator Rotation = FRotator(0, 0, 0);
+	
+	if (IsVisible)
+		Rotation = FRotator(0, 0, 180);
+		
+	this->SetActorRotation(Rotation);
+}
+

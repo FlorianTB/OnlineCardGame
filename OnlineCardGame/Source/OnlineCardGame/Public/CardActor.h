@@ -22,4 +22,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Card Data")
 	void SetCardInfo(const FCardInfo& NewCardInfo);
 
+	UFUNCTION(BlueprintCallable, Category = "Card Data")
+	void SetIsVisible(bool isVisible);
+	
+	UPROPERTY(BlueprintReadOnly, Category = "Card Data")
+	bool IsVisible;
 };

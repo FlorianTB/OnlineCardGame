@@ -6,6 +6,14 @@
 #include "Engine/DataTable.h"
 #include "CardInfo.generated.h"
 
+UENUM(BlueprintType)
+enum class ECardType : uint8
+{
+	Fire UMETA(DisplayName = "Fire"),
+	Plant UMETA(DisplayName = "Plant"),
+	Water UMETA(DisplayName = "Water"),
+};
+
 /**
  * 
  */
@@ -22,5 +30,8 @@ public:
 	FLinearColor BackgroundColor;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString Type;
+	ECardType Type;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	ECardType WeakAgainstType;
 };

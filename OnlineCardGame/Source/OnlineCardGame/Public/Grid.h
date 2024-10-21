@@ -49,4 +49,7 @@ public:
     
     UFUNCTION(BlueprintCallable, Category = "Cell")
     void SwapSelectedCellsCards();
+
+	UFUNCTION(BlueprintCallable, Category = "Cell")
+	void Fight();
 };

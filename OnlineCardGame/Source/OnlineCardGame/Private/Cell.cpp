@@ -37,3 +37,32 @@ void ACell::UpdateCardsPosition()
 	}
 }
 
+void ACell::SetCardsVisible()
+{
+	int VisibleCardCount = 0;
+	int InvisibleCardCount = 0;
+
+	for (ACardActor* Card : Cards)
+	{
+		if (Card->IsVisible)
+			VisibleCardCount++;
+		else
+			InvisibleCardCount++;
+	}
+	
+	for (int i = Cards.Num() - 1; i >= 0; i--)
+	{
+		if (!Cards[i]->IsVisible)
+		{
+			Cards[i]->SetIsVisible(true);
+			FVector Position = GetActorLocation() + FVector::UpVector + (VisibleCardCount * FVector::UpVector);
+			InvisibleCardCount--;
+			VisibleCardCount++;
+		}
+	}
+
+	Cards.Sort([](const ACardActor& A, const ACardActor& B) {
+		return A.GetActorLocation().Z < B.GetActorLocation().Z;
+	});
+}
+
