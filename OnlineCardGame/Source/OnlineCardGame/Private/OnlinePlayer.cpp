@@ -6,10 +6,8 @@
 #include "CardGameMode.h"
 #include "CardHandWidget.h"
 #include "CardWidget.h"
+#include "OCGGameMode.h"
 #include "OnlinePlayerController.h"
-#include "Components/WidgetComponent.h"
-#include "Blueprint/UserWidget.h"
-#include "Kismet/KismetSystemLibrary.h"
 
 class AOnlinePlayerController;
 class UCardWidget;
@@ -51,7 +49,7 @@ void AOnlinePlayer::PlayCards(ACell* Cell)
 				UE_LOG(LogTemp, Warning, TEXT("Play card %s"), *CardWidget->CardInfo.CardName);
 				Hand.Remove(Card);
 
-				ACardGameMode* GameMode = Cast<ACardGameMode>(GetWorld()->GetAuthGameMode());
+				AOCGGameMode* GameMode = Cast<AOCGGameMode>(GetWorld()->GetAuthGameMode());
 				if (GameMode)
 				{
 					GameMode->PlaceCardOnBoard(Cell, Card);
